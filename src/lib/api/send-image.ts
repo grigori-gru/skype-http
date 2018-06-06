@@ -32,6 +32,7 @@ export async function sendImage(
     cookies: apiContext.cookies,
     body: bodyNewObjectStr,
     headers: {
+      "X-Client-Version": "0/0.0.0.0",
       "Authorization": `skype_token ${apiContext.skypeToken.value}`,
       "Content-Type": "application/json",
       "Content-Length": bodyNewObjectStr.length.toString(10),
@@ -50,6 +51,7 @@ export async function sendImage(
     cookies: apiContext.cookies,
     body: file,
     headers: {
+      "X-Client-Version": "0/0.0.0.0",
       "Authorization": `skype_token ${apiContext.skypeToken.value}`,
       "Content-Type": "multipart/form-data",
       "Content-Length": file.byteLength.toString(10),
@@ -81,6 +83,7 @@ export async function sendImage(
     cookies: apiContext.cookies,
     body: JSON.stringify(query),
     headers: {
+      "X-Client-Version": "0/0.0.0.0",
       RegistrationToken: apiContext.registrationToken.raw,
     },
   };
